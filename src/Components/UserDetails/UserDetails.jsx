@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import "./UserDetails.css";
 function UserDetails() {
   const { id } = useParams();
   console.log("This is the id of user", id);
@@ -11,9 +11,7 @@ function UserDetails() {
 
   async function fetchUserDetails() {
     try {
-      const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/users/${id}`
-      );
+      const response = await axios.get(`http://localhost:3000/users/${id}`);
       console.log("user details fetched", response.data);
       setUserDetails(response.data);
     } catch (error) {
@@ -42,11 +40,13 @@ function UserDetails() {
   }
 
   return (
-    <div>
-      <h1>These are the required user details</h1>
-      <h2>Username: {userDetails.name}</h2>
-      <p>Email: {userDetails.email}</p>
-      <p>Phone: {userDetails.phone}</p>
+    <div className="userdetails">
+      <h1 className="mainHeadingUserDetails">
+        These are the required user details:
+      </h1>
+      <h4 className="userDetails"> Username:</h4> <p>{userDetails.name}</p>
+      <h4 className="userDetails">Email:</h4> <p>{userDetails.email}</p>
+      <h4 className="userDetails">Phone:</h4> <p>{userDetails.phone}</p>
     </div>
   );
 }

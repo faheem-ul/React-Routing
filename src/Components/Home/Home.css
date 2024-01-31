@@ -1,0 +1,27 @@
+
+
+.homePage {
+    margin: 20px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222; 
+    color: #fff; 
+    padding: 20px;
+  }
+  
+  .mainHeading {
+    color: #ffcc00; 
+  }
+  
+  .sub-mainHeading {
+    color: #ccc; 
+  }
+  
+  .homePara {
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  
