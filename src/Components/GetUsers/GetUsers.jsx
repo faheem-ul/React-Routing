@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./GetUsers.css";
 
 function GetUsers() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   async function fetchUsers() {
     try {
@@ -24,6 +25,11 @@ function GetUsers() {
     fetchUsers();
   }, []);
 
+  const handleUserClick = (id) => {
+    console.log("user clicked", id);
+    navigate(`/userdetails/${id}`);
+    // console.log(userId);
+  };
   if (loading) {
     return (
       <div>
@@ -36,9 +42,11 @@ function GetUsers() {
     <div>
       <h1 className="mainheadingUsers">Users from the server are ...</h1>
       <ul className="users">
-        {users.map((user, index) => (
-          <li key={index}>
-            <Link to={`/userdetails/${index}`}>{user.name} </Link>{" "}
+        {users.map((user, id) => (
+          <li key={user.id}>
+            <span className="username" onClick={() => handleUserClick(user.id)}>
+              {user.name}{" "}
+            </span>
           </li>
         ))}
       </ul>
