@@ -8,31 +8,11 @@ function AddUser() {
   const [newUserEmail, setNewuserEmail] = useState("");
   const [newUserPhone, setNewuserPhone] = useState("");
   const navigate = useNavigate();
-  // const [newUserId, setNewuserId] = useState("0");
-
-  // async function fetchUserId() {
-  //   try {
-  //     const response = await axios.get("http://localhost:3000/users");
-  //     console.log("Users array fetched successfully:", response.data);
-  //     const maxId = response.data.reduce((max, currUser) =>
-  //       Math.max(max, parseInt(currUser.id, 10), -1)
-  //     );
-  //     console.log("this is the max id", maxId);
-  //     // setNewuserId(maxId + 1);
-  //   } catch (error) {
-  //     console.error("Error fetching users array:", error);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchUserId();
-  // }, []);
 
   function handleSubmit() {
     // e.preventDefault();
 
     const newUser = {
-      // id: newUserId,
       name: newUserName,
       email: newUserEmail,
       number: newUserPhone,
@@ -58,6 +38,11 @@ function AddUser() {
   }
   function handlePhoneChange(e) {
     setNewuserPhone(e.target.value);
+  }
+
+  function deleteUser() {
+    localStorage.removeItem("logged in user");
+    navigate("/home");
   }
 
   return (
@@ -86,6 +71,9 @@ function AddUser() {
         />
         <button type="submit">Add User</button>
       </form>
+      <button className="logoutAddUser" onClick={deleteUser}>
+        Log Out
+      </button>
     </div>
   );
 }

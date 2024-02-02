@@ -25,52 +25,38 @@
       "number": "09033333333"
     },
     {
-      "id": "4",
-      "name": "Faheem Ul Hassan",
-      "email": "faheemulhassanaziz@gmail.com",
-      "number": "0000000000"
+      "id": "94e6",
+      "name": "faheem",
+      "email": "faheem@gmail.com",
+      "password": "12345",
+      "number": "03494820657"
     },
     {
-      "id": "a963",
-      "name": "me",
-      "email": "me@gmail.com",
-      "number": "1234567"
+      "id": "c5b3",
+      "name": "ali",
+      "email": "ali@gmail.com",
+      "password": "12345",
+      "number": "03029809250"
     },
     {
-      "id": "1ebb",
-      "name": "abbas",
-      "email": "abbas@gmail.com",
-      "number": "1234567"
+      "id": "ec60",
+      "name": "atif",
+      "email": "atif@gmail.com",
+      "number": "0349000000000"
     },
     {
-      "id": "90d5",
-      "name": "new user",
-      "email": "newuser@gmail.com",
-      "number": "1234567"
-    },
-    {
-      "id": "d5ff",
-      "name": "new",
-      "email": "ne@gmail.com",
-      "number": "1234567"
-    },
-    {
-      "id": "b338",
-      "name": "abc",
-      "email": "abc@gmail.com",
-      "number": "1234567"
-    },
-    {
-      "id": "6492",
+      "id": "a22c",
       "name": "salman",
       "email": "salman@gmail.com",
-      "number": "12345678"
+      "password": "12345",
+      "number": "034900000"
     },
     {
-      "id": "bda1",
-      "name": "sdf",
-      "email": "df@gmail.com",
-      "number": "123456"
+      "id": "eb12",
+      "name": "fahad",
+      "email": "fahad@gmail.com",
+      "password": "12345",
+      "number": "12345678"
     }
   ]
 }

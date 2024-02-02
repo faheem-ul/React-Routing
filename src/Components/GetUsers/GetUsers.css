@@ -1,31 +1,40 @@
-
-
 .mainheadingUsers {
-    color: #333;
-  }
-  
-  .users {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .users li {
-    margin: 10px 0;
-  }
-  
-  .users li a {
-    text-decoration: none;
-    color: #007bff; 
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .users li a:hover {
-    color: #0056b3; 
-  }
-  
-  .username{
-    cursor: pointer;
-    font-weight: bold;
-    color: #0056b3;
-  }
+  color: #333;
+}
+
+.users {
+  list-style: none;
+  padding: 0;
+}
+
+.users li {
+  margin: 10px 0;
+}
+
+.users li span {
+  cursor: pointer;
+  font-weight: bold;
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.users li span:hover {
+  color: #003366;
+}
+
+.logoutGetUsers {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logoutGetUsers:hover {
+  background-color: #c82333;
+}

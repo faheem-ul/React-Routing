@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./UserDetails.css";
 function UserDetails() {
   const { id } = useParams();
   console.log("This is the id of user", id);
 
   const [userDetails, setUserDetails] = useState(null);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
   async function fetchUserDetails() {
@@ -24,6 +25,11 @@ function UserDetails() {
   useEffect(() => {
     fetchUserDetails();
   }, []);
+
+  function deleteUser() {
+    navigate("/home");
+    localStorage.removeItem("logged in user");
+  }
 
   if (loading) {
     return (
@@ -46,7 +52,10 @@ function UserDetails() {
       </h1>
       <h4 className="userDetails"> Username:</h4> <p>{userDetails.name}</p>
       <h4 className="userDetails">Email:</h4> <p>{userDetails.email}</p>
-      <h4 className="userDetails">Phone:</h4> <p>{userDetails.phone}</p>
+      <h4 className="userDetails">Phone:</h4> <p>{userDetails.number}</p>
+      <button className="logOutUserDetails" onClick={deleteUser}>
+        Log Out
+      </button>
     </div>
   );
 }
