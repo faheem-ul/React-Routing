@@ -1,4 +1,5 @@
 .homePage {
+<<<<<<< Updated upstream
   margin: 20px;
   height: 100vh;
   display: flex;
@@ -53,3 +54,50 @@
 .loginButton:hover {
   background-color: #003366;
 }
+=======
+    margin: 20px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222; 
+    color: #fff; 
+    padding: 20px;
+  }
+  
+  .mainHeading {
+    color: #ffcc00; 
+  }
+  
+  .sub-mainHeading {
+    color: #ccc; 
+  }
+  
+  .homePara {
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  
+  .homeLoginButton, 
+  .homeSignUpButton{
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+
+  .homeLoginButton:hover,
+  .homeSignUpButton:hover {
+    background-color: #0056b3;
+  }
+
+  
+
+
+  
+>>>>>>> Stashed changes

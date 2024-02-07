@@ -6,6 +6,11 @@ import UserDetails from "./Components/UserDetails/UserDetails";
 import AddUser from "./Components/AddUser/AddUser";
 import SignUp from "./Components/SignUp/SignUp";
 import Login from "./Components/Login/Login";
+<<<<<<< Updated upstream
+=======
+// import SignUp from "./Components/SignUp/SignUp";
+// import Login from "./Components/Login/Login";
+>>>>>>> Stashed changes
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {

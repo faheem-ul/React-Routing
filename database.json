@@ -25,6 +25,7 @@
       "number": "09033333333"
     },
     {
+<<<<<<< Updated upstream
       "id": "94e6",
       "name": "faheem",
       "email": "faheem@gmail.com",
@@ -57,6 +58,18 @@
       "email": "fahad@gmail.com",
       "password": "12345",
       "number": "12345678"
+=======
+      "id": "cb6f",
+      "email": "abc@gmail.com",
+      "password": "1234",
+      "number": "00000"
+    },
+    {
+      "id": "04e5",
+      "email": "bb@gmail.com",
+      "password": "1234",
+      "number": "00000000"
+>>>>>>> Stashed changes
     }
   ]
 }
