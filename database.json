@@ -23,6 +23,12 @@
       "name": "Grace Funsho",
       "email": "gracefunsho@gmail.com",
       "number": "09033333333"
+    },
+    {
+      "id": "19d9",
+      "email": "dawood@gmail.com",
+      "password": "1234",
+      "number": "0000000"
     }
   ]
 }

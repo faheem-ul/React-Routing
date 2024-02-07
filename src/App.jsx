@@ -4,6 +4,8 @@ import Home from "./Components/Home/Home";
 import GetUsers from "./Components/GetUsers/GetUsers";
 import UserDetails from "./Components/UserDetails/UserDetails";
 import AddUser from "./Components/AddUser/AddUser";
+import Login from "./Components/Login/Login";
+import Signup from "./Components/Signup/Signup";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
   return (
     <div className="nav">
       <Router>
-        <Link to="/home" style={linkstyle}>
+        <Link to="/" style={linkstyle}>
           Home Page
         </Link>
         <Link to="/users" style={linkstyle}>
@@ -27,10 +29,12 @@ function App() {
         </Link>
 
         <Routes>
-          <Route path="/home" element={<Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/users" element={<GetUsers />}></Route>
           <Route path="/adduser" element={<AddUser />}></Route>
           <Route path="/userdetails/:id" element={<UserDetails />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </Router>
     </div>
