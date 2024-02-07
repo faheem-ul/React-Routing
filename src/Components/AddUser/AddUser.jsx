@@ -48,12 +48,8 @@ function AddUser() {
   return (
     <div className="adduser">
       <h1 className="mainheading">
-<<<<<<< Updated upstream
-        A new user can been added by submitting the form.
-=======
         A new user can been added by submitting the form, which can be viewed in
         the console section.
->>>>>>> Stashed changes
       </h1>
       <form className="userforms" onSubmit={handleSubmit}>
         <input

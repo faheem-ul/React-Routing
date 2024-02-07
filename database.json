@@ -25,40 +25,6 @@
       "number": "09033333333"
     },
     {
-<<<<<<< Updated upstream
-      "id": "94e6",
-      "name": "faheem",
-      "email": "faheem@gmail.com",
-      "password": "12345",
-      "number": "03494820657"
-    },
-    {
-      "id": "c5b3",
-      "name": "ali",
-      "email": "ali@gmail.com",
-      "password": "12345",
-      "number": "03029809250"
-    },
-    {
-      "id": "ec60",
-      "name": "atif",
-      "email": "atif@gmail.com",
-      "number": "0349000000000"
-    },
-    {
-      "id": "a22c",
-      "name": "salman",
-      "email": "salman@gmail.com",
-      "password": "12345",
-      "number": "034900000"
-    },
-    {
-      "id": "eb12",
-      "name": "fahad",
-      "email": "fahad@gmail.com",
-      "password": "12345",
-      "number": "12345678"
-=======
       "id": "cb6f",
       "email": "abc@gmail.com",
       "password": "1234",
@@ -69,7 +35,6 @@
       "email": "bb@gmail.com",
       "password": "1234",
       "number": "00000000"
->>>>>>> Stashed changes
     }
   ]
 }

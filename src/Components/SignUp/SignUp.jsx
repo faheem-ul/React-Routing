@@ -1,80 +1,62 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import axios from "axios";
+import { setUserInLocalStorageonSignUp } from "../../utils/LocalStorage/LocalStorage";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
 function SignUp() {
-  const [signUpUserName, setSignUpUserName] = useState("");
-  const [signUpUserEmail, setSignUpUserEmail] = useState("");
-  const [signUpUserPassword, setSignUpUserPassword] = useState("");
-  const [signUpUserContact, setSignUpUserContact] = useState("");
-  const naviagte = useNavigate();
+  const [userEmail, setUsersEmail] = useState("");
+  const [userPassword, setUsersPassword] = useState("");
+  const [userNumber, setUserNumber] = useState("");
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newSignUpUser = {
-      name: signUpUserName,
-      email: signUpUserEmail,
-      password: signUpUserPassword,
-      number: signUpUserContact,
+    const newUser = {
+      email: userEmail,
+      password: userPassword,
+      number: userNumber,
     };
 
     axios
-      .post("http://localhost:3000/users", newSignUpUser)
-      .then((response) => {
-        console.log("new user Signed up successfully", response);
-      })
-      .catch((error) => {
-        console.log("error is signup of new user", error);
-      });
-    alert("New user Signed up successfully");
+      .post("http://localhost:3000/users", newUser)
+      .then((res) => console.log("new user added", res))
+      .catch((err) => console.log("error in adding new user", err));
 
-    // localStorage.setItem("signupuser", JSON.stringify(newSignUpUser));
+    setUserInLocalStorageonSignUp(userEmail, userPassword, userNumber);
+    navigate("/users");
+  };
 
-    naviagte("/login");
-  }
-  function handleSignUpNameChange(e) {
-    setSignUpUserName(e.target.value);
-  }
-  function handleSignUpEmailChange(e) {
-    setSignUpUserEmail(e.target.value);
-  }
+  const handleEmailChange = (e) => {
+    setUsersEmail(e.target.value);
+  };
 
-  function handleSignUpPasswordChange(e) {
-    setSignUpUserPassword(e.target.value);
-  }
+  const handlePasswordChange = (e) => {
+    setUsersPassword(e.target.value);
+  };
 
-  function handleSignUpPhone(e) {
-    setSignUpUserContact(e.target.value);
-  }
-
+  const handleNumberChange = (e) => {
+    setUserNumber(e.target.value);
+  };
   return (
-    <div className="signup">
-      <h1 className="mainSignupHeading">Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="signupDiv">
+      <h1 className="signupMainHeading"> SignUp Page</h1>
+      <form onSubmit={handleSubmit} className="signupForm">
+        <input type="email" placeholder="email" onChange={handleEmailChange} />
         <input
-          type="text"
-          placeholder="Enter Name"
-          onChange={handleSignUpNameChange}
+          type="password"
+          placeholder="password"
+          onChange={handlePasswordChange}
         />
         <input
-          type="email"
-          placeholder="Enter Valid Email"
-          onChange={handleSignUpEmailChange}
+          type="number"
+          placeholder="contact Number"
+          onChange={handleNumberChange}
         />
-        <input
-          type="text"
-          placeholder="Enter Password"
-          onChange={handleSignUpPasswordChange}
-        />
-
-        <input
-          type="Number"
-          placeholder="Enter you number"
-          onChange={handleSignUpPhone}
-        />
-        <button type="submit">Sign Up</button>
+        <button className="signupSubmitbtn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

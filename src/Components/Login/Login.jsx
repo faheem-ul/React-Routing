@@ -1,71 +1,48 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { setUserInLocalStorageonLogin } from "../../utils/LocalStorage/LocalStorage";
+import UseGetUsers from "../../hooks/UseGetUsers";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./Login.css";
 
 function Login() {
-  const [Users, SetUsers] = useState([]);
-  const [LoginEmail, setLoginEmail] = useState("");
-  const [LoginPassword, setLoginPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const { users, loading } = UseGetUsers();
   const navigate = useNavigate();
 
-  function handleLoginEmail(e) {
-    // e.preventDefault();
-    setLoginEmail(e.target.value);
-  }
-
-  function handleLoginPassword(e) {
-    // e.preventDefault();
-    setLoginPassword(e.target.value);
-  }
-
-  function handleSubmit(e) {
+  const handleLoginSubmit = (e) => {
     e.preventDefault();
-
-    console.log("these are users", Users);
-
-    Users.find((user) => {
-      if (user.email === LoginEmail && user.password === LoginPassword) {
-        console.log("login successful");
-        localStorage.setItem("logged in user", JSON.stringify(user));
+    // console.log(users);
+    users.find((user) => {
+      if (user.email === loginEmail && user.password === loginPassword) {
+        setUserInLocalStorageonLogin(user);
         navigate("/users");
-      } else {
-        console.log("login unsuccessful");
       }
     });
-  }
+  };
 
-  async function fetchUsers() {
-    try {
-      const response = await axios.get("http://localhost:3000/users");
-      //   console.log("Users fetched successfully:", response.data);
-      SetUsers(response.data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-    // SetUsers(response.data);
-  }
+  const hanndleLoginEmail = (e) => {
+    setLoginEmail(e.target.value);
+  };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  const hanndleLoginPassword = (e) => {
+    setLoginPassword(e.target.value);
+  };
 
   return (
-    <div className="login">
-      <h1 className="loginHeading">Login</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="loginDiv">
+      <h1 className="loginHeading">Login Page</h1>
+
+      <form onSubmit={handleLoginSubmit} className="loginForm">
+        <input type="text" placeholder="email" onChange={hanndleLoginEmail} />
         <input
-          type="email"
-          placeholder="enter email"
-          onChange={handleLoginEmail}
+          type="password"
+          placeholder="password"
+          onChange={hanndleLoginPassword}
         />
-        <input
-          type="text"
-          placeholder="enter password"
-          onChange={handleLoginPassword}
-        />
-        <button type="submit">Login</button>
+        <button type="submit" className="loginSubmitBtn">
+          Login
+        </button>
       </form>
     </div>
   );
